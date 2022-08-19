@@ -17,8 +17,43 @@ export class NewsCards extends Component {
 						alt='...'
 					/>
 					<div className='card-body'>
-						<h5 className='card-title'> {title}</h5>
-						<p className='card-text'>{description}...</p>
+						<h5
+							className='card-title'
+							style={{
+								maxWidth: '100%',
+
+								display: '-webkit-box',
+
+								WebkitBoxOrient: 'vertical',
+
+								WebkitLineClamp: 3,
+
+								overflow: 'hidden',
+
+								textOverflow: 'ellipsis',
+							}}
+						>
+							{' '}
+							{title}
+						</h5>
+						<p
+							className='card-text'
+							style={{
+								maxWidth: '100%',
+
+								display: '-webkit-box',
+
+								WebkitBoxOrient: 'vertical',
+
+								WebkitLineClamp: 4,
+
+								overflow: 'hidden',
+
+								textOverflow: 'ellipsis',
+							}}
+						>
+							{description}...
+						</p>
 						<a
 							href={newsUrl}
 							className='btn btn-sm btn-primary'
