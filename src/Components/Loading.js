@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import magnify from './Magnify.gif';
+import magnify from '../Magnify.gif';
 
 export default class Loading extends Component {
 	render() {

@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
-import NewsCards from './NewsCards';
 import '../StyleSheets/news.css';
+import NewsCards from './NewsCards';
 import Loading from './Loading';
+import PropTypes from 'prop-types';
 
 export class News extends Component {
+	static defaultProps = {
+		country: 'in',
+		pageSize: 8,
+		category: 'general',
+	};
+	static propsTypes = {
+		country: PropTypes.string,
+		pageSize: PropTypes.number,
+		category: PropTypes.string,
+	};
 	constructor() {
 		super();
 		this.state = {
@@ -15,7 +26,7 @@ export class News extends Component {
 	}
 
 	async componentDidMount() {
-		let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7ba2ac4f4cbd4c2cbbd31225f4d92c2a&page=1&pageSize=${this.props.pageSize}`;
+		let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=7ba2ac4f4cbd4c2cbbd31225f4d92c2a&page=1&pageSize=${this.props.pageSize}`;
 		this.setState({ loading: true });
 		let data = await fetch(url);
 		let parsedData = await data.json();
@@ -27,7 +38,11 @@ export class News extends Component {
 	}
 
 	previousClick = async () => {
-		let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7ba2ac4f4cbd4c2cbbd31225f4d92c2a&page=${
+		let url = `https://newsapi.org/v2/top-headlines?country=${
+			this.props.country
+		}&category=${
+			this.props.category
+		}&apiKey=7ba2ac4f4cbd4c2cbbd31225f4d92c2a&page=${
 			this.state.page - 1
 		}&pageSize=${this.props.pageSize}`;
 		this.setState({ loading: true });
@@ -41,7 +56,11 @@ export class News extends Component {
 	};
 
 	nextClick = async () => {
-		let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=7ba2ac4f4cbd4c2cbbd31225f4d92c2a&page=${
+		let url = `https://newsapi.org/v2/top-headlines?country=${
+			this.props.country
+		}&category=${
+			this.props.category
+		}&apiKey=7ba2ac4f4cbd4c2cbbd31225f4d92c2a&page=${
 			this.state.page + 1
 		}&pageSize=${this.props.pageSize}`;
 		this.setState({ loading: true });
@@ -57,7 +76,6 @@ export class News extends Component {
 	render() {
 		return (
 			<>
-				<div ref={this.myRef}></div>
 				<div className='container'>
 					<p className='text-center display-5'>Top News</p>
 					{this.state.loading ? <Loading /> : ''}
@@ -68,9 +86,7 @@ export class News extends Component {
 									<div className='col-md-4' key={elements.url}>
 										<NewsCards
 											title={
-												elements.title
-													? elements.title.slice(0.52)
-													: 'No title available'
+												elements.title ? elements.title : 'No title available'
 											}
 											description={
 												elements.description
