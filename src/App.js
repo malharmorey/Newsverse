@@ -14,7 +14,7 @@ export default class App extends Component {
 						exact
 						path='/'
 						element={
-							<News key='home' pageSize={10} country='in' category='general' />
+							<News key='home' pageSize={12} country='in' category='general' />
 						}
 					/>
 					<Route
@@ -23,7 +23,7 @@ export default class App extends Component {
 						element={
 							<News
 								key='business'
-								pageSize={10}
+								pageSize={12}
 								country='in'
 								category='business'
 							/>
@@ -35,7 +35,7 @@ export default class App extends Component {
 						element={
 							<News
 								key='entertainment'
-								pageSize={10}
+								pageSize={12}
 								country='in'
 								category='entertainment'
 							/>
@@ -45,7 +45,7 @@ export default class App extends Component {
 						exact
 						path='/health'
 						element={
-							<News key='health' pageSize={10} country='in' category='health' />
+							<News key='health' pageSize={12} country='in' category='health' />
 						}
 					/>
 					<Route
@@ -54,7 +54,7 @@ export default class App extends Component {
 						element={
 							<News
 								key='science'
-								pageSize={10}
+								pageSize={12}
 								country='in'
 								category='science'
 							/>
@@ -64,7 +64,7 @@ export default class App extends Component {
 						exact
 						path='/sports'
 						element={
-							<News key='sports' pageSize={10} country='in' category='sports' />
+							<News key='sports' pageSize={12} country='in' category='sports' />
 						}
 					/>
 					<Route
@@ -73,7 +73,7 @@ export default class App extends Component {
 						element={
 							<News
 								key='technology'
-								pageSize={10}
+								pageSize={12}
 								country='in'
 								category='technology'
 							/>
@@ -83,7 +83,7 @@ export default class App extends Component {
 						exact
 						path='/about'
 						element={
-							<News key='about' pageSize={10} country='in' category='about' />
+							<News key='about' pageSize={12} country='in' category='about' />
 						}
 					/>
 				</Routes>

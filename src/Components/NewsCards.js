@@ -1,9 +1,11 @@
+import moment from 'moment';
 import React, { Component } from 'react';
 import '../StyleSheets/newsCard.css';
 
 export class NewsCards extends Component {
 	render() {
-		let { title, description, imgUrl, newsUrl } = this.props;
+		let { title, description, imgUrl, newsUrl, PublisherName, publishedAt } =
+			this.props;
 		return (
 			<div className='my-4'>
 				<div className='card m-auto' id='divCard'>
@@ -14,7 +16,7 @@ export class NewsCards extends Component {
 								: imgUrl
 						}
 						className='card-img-top'
-						alt='...'
+						alt='Not available'
 					/>
 					<div className='card-body'>
 						<h5
@@ -53,6 +55,12 @@ export class NewsCards extends Component {
 							}}
 						>
 							{description}...
+						</p>
+						<p className='card-text'>
+							<small className='text-muted'>
+								Updated {moment(publishedAt).startOf('minutes').fromNow()} By{' '}
+								<strong>{PublisherName ? PublisherName : 'Unknown'}</strong>
+							</small>
 						</p>
 						<a
 							href={newsUrl}
