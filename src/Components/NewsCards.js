@@ -15,51 +15,16 @@ export class NewsCards extends Component {
 								? 'https://kaverisias.com/wp-content/uploads/2018/01/catalog-default-img.gif'
 								: imgUrl
 						}
+						alt='...'
 						className='card-img-top'
-						alt='Not available'
 					/>
 					<div className='card-body'>
-						<h5
-							className='card-title'
-							style={{
-								maxWidth: '100%',
-
-								display: '-webkit-box',
-
-								WebkitBoxOrient: 'vertical',
-
-								WebkitLineClamp: 3,
-
-								overflow: 'hidden',
-
-								textOverflow: 'ellipsis',
-							}}
-						>
-							{' '}
-							{title}
-						</h5>
-						<p
-							className='card-text'
-							style={{
-								maxWidth: '100%',
-
-								display: '-webkit-box',
-
-								WebkitBoxOrient: 'vertical',
-
-								WebkitLineClamp: 4,
-
-								overflow: 'hidden',
-
-								textOverflow: 'ellipsis',
-							}}
-						>
-							{description}...
-						</p>
+						<h5 className='card-title cardText'> {title}</h5>
+						<p className='card-text cardText'>{description}...</p>
 						<p className='card-text'>
 							<small className='text-muted'>
-								Updated {moment(publishedAt).startOf('minutes').fromNow()} By{' '}
-								<strong>{PublisherName ? PublisherName : 'Unknown'}</strong>
+								Updated {moment(publishedAt).startOf('minutes').fromNow()}
+								By <strong>{PublisherName ? PublisherName : 'Unknown'}</strong>
 							</small>
 						</p>
 						<a

@@ -8,3 +8,18 @@
 div > img {
 	max-height: 12rem;
 }
+
+.cardText {
+	max-width: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.card-text {
+	margin: 0rem 0rem 0.5rem 0rem;
+}
+p > small {
+	font-size: 12px;
+}
