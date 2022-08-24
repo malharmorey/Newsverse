@@ -7,6 +7,7 @@ import LoadingBar from 'react-top-loading-bar';
 
 export default class App extends Component {
 	pageSize = 40;
+	apiKey = process.env.REACT_APP_NEWS_API;
 	state = {
 		progress: 10,
 	};
@@ -29,6 +30,7 @@ export default class App extends Component {
 								key='home'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='general'
 							/>
 						}
@@ -42,6 +44,7 @@ export default class App extends Component {
 								key='business'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='business'
 							/>
 						}
@@ -55,6 +58,7 @@ export default class App extends Component {
 								key='entertainment'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='entertainment'
 							/>
 						}
@@ -68,6 +72,7 @@ export default class App extends Component {
 								key='health'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='health'
 							/>
 						}
@@ -81,6 +86,7 @@ export default class App extends Component {
 								key='science'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='science'
 							/>
 						}
@@ -94,6 +100,7 @@ export default class App extends Component {
 								key='sports'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='sports'
 							/>
 						}
@@ -107,6 +114,7 @@ export default class App extends Component {
 								key='technology'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='technology'
 							/>
 						}
@@ -120,6 +128,7 @@ export default class App extends Component {
 								key='about'
 								pageSize={this.pageSize}
 								country='in'
+								apiKey={this.apiKey}
 								category='about'
 							/>
 						}
