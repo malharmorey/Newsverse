@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 export class Navbar extends Component {
 	render() {
 		return (
-			<div>
-				<nav className='navbar navbar-expand-lg bg-dark'>
+			<div id='navBar'>
+				<nav className='navbar navbar-expand-lg bg-dark /*  */'>
 					<div className='container-fluid ' id='fluidContainer'>
 						<Link className='navbar-brand text-white' id='title' to='/'>
 							Newsverse

@@ -4,6 +4,7 @@ import NewsCards from './NewsCards';
 import Loading from './Loading';
 import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import ScrollToTop from 'react-scroll-to-top';
 
 export class News extends Component {
 	static defaultProps = {
@@ -62,49 +63,51 @@ export class News extends Component {
 	render() {
 		return (
 			<>
-				<div className='container'>
-					<p className='text-center display-5'>
-						Top {this.capitalizeFirstLetter(this.props.category)} Headlines
-					</p>
+				<p id='headline' className='text-center display-5 '>
+					Top {this.capitalizeFirstLetter(this.props.category)} Headlines
+				</p>
 
-					<InfiniteScroll
-						dataLength={this.state.articles.length}
-						next={this.fetchMoreData}
-						hasMore={this.state.articles.length !== this.state.totalResults}
-						loader={
-							this.state.articles.length === this.state.totalResults ? (
-								''
-							) : (
-								<Loading />
-							)
-						}
-					>
-						<div className='container'>
-							<div className='row'>
-								{this.state.articles.map((elements) => {
-									return (
-										<div className='col-md-4' key={elements.url}>
-											<NewsCards
-												title={
-													elements.title ? elements.title : 'No title available'
-												}
-												description={
-													elements.description
-														? elements.description.slice(0, 90)
-														: 'No description available'
-												}
-												imgUrl={elements.urlToImage}
-												newsUrl={elements.url}
-												PublisherName={elements.source.name}
-												publishedAt={elements.publishedAt}
-											/>
-										</div>
-									);
-								})}
-							</div>
+				<InfiniteScroll
+					dataLength={this.state.articles.length}
+					next={this.fetchMoreData}
+					hasMore={this.state.articles.length !== this.state.totalResults}
+					loader={
+						this.state.articles.length === this.state.totalResults ? (
+							''
+						) : (
+							<Loading />
+						)
+					}
+				>
+					<div className='container'>
+						<div className='row'>
+							{this.state.articles.map((elements) => {
+								return (
+									<div className='col-md-4' key={elements.url}>
+										<NewsCards
+											title={
+												elements.title ? elements.title : 'No title available'
+											}
+											description={
+												elements.description
+													? elements.description.slice(0, 90)
+													: 'No description available'
+											}
+											imgUrl={elements.urlToImage}
+											newsUrl={elements.url}
+											PublisherName={elements.source.name}
+											publishedAt={elements.publishedAt}
+										/>
+									</div>
+								);
+							})}
 						</div>
-					</InfiniteScroll>
-				</div>
+					</div>
+				</InfiniteScroll>
+				<ScrollToTop
+					smooth
+					component={<button class='scrollTopBtn'>&uarr;</button>}
+				/>
 			</>
 		);
 	}

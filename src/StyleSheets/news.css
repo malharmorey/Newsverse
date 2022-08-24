@@ -1,8 +1,46 @@
 @import url(../App.css);
 
-.container > p {
+#headline {
 	font-family: var(--primaryFont);
-	font-weight: 800;
+	font-weight: 800 !important;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
+	text-shadow: 3px 10px 10px rgba(114, 114, 114, 0.8);
+}
+
+.scrollTopBtn {
+	position: absolute;
+	bottom: -11px;
+	right: -8px;
+	z-index: 99;
+	height: 4rem;
+	width: 4rem;
+	appearance: none;
+	background-color: #ffffff;
+	border-radius: 40em;
+	border-style: none;
+	box-shadow: #979797 0 -5px 6px inset;
+	box-sizing: border-box;
+	color: #000000;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: -0.24px;
+	margin: 0;
+	outline: none;
+	padding: 1rem 1rem;
+	quotes: auto;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.15s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.scrollTopBtn:hover {
+	background-color: #ffc229;
+	box-shadow: #ff6314 0 -6px 8px inset;
+	transform: scale(1.125);
 }

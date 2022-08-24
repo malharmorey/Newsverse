@@ -1,15 +1,20 @@
 @import url(../App.css);
-
-#fluidContainer{
-    align-items: baseline;
-}
-#title{
-    font-family: var(--primaryFont);
-    font-weight: 600;
+#navBar {
+	position: sticky;
+	top: 0px;
+	z-index: 99;
 }
 
-ul >li >a {
-    font-family: var(--secondaryFont);
-    font-weight: 400;
-    padding-bottom: 0px !important;
+#fluidContainer {
+	align-items: baseline;
+}
+#title {
+	font-family: var(--primaryFont);
+	font-weight: 600;
+}
+
+ul > li > a {
+	font-family: var(--secondaryFont);
+	font-weight: 400;
+	padding-bottom: 0px !important;
 }
