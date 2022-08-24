@@ -72,6 +72,7 @@ export class Navbar extends Component {
 					</div>
 				</nav>
 			</div>
+			//TODO: use search bar to search and fetch matching articles
 		);
 	}
 }

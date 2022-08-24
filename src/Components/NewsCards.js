@@ -18,13 +18,13 @@ export class NewsCards extends Component {
 						alt='...'
 						className='card-img-top'
 					/>
-					<div className='card-body'>
+					<div className='card-body cardBody'>
 						<h5 className='card-title cardText'> {title}</h5>
 						<p className='card-text cardText'>{description}...</p>
 						<p className='card-text'>
 							<small className='text-muted'>
-								Updated {moment(publishedAt).startOf('minutes').fromNow()}
-								By <strong>{PublisherName ? PublisherName : 'Unknown'}</strong>
+								Updated {moment(publishedAt).startOf('minutes').fromNow()} by{' '}
+								<strong>{PublisherName ? PublisherName : 'Unknown'}</strong>
 							</small>
 						</p>
 						<a
