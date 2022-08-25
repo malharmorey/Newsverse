@@ -1,8 +1,5 @@
 @import url(../App.css);
 
-/* body {
-	background-color: #fff3f0;
-} */
 #headline {
 	font-family: var(--primaryFont);
 	font-weight: 800 !important;
@@ -19,7 +16,7 @@
 	height: 4rem;
 	width: 4rem;
 	appearance: none;
-	background-color: #fff3f0;
+	background-color: #ffff;
 	border-radius: 40em;
 	border-style: none;
 	box-shadow: #979797 0 -5px 6px inset;
