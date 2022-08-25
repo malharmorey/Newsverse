@@ -1,8 +1,11 @@
 @import url(../App.css);
 #navBar {
-	position: sticky;
+	position: fixed;
 	top: 0px;
 	z-index: 99;
+	background-color: white;
+	box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.17);
+	width: 100vw;
 }
 
 #fluidContainer {
@@ -15,6 +18,11 @@
 
 ul > li > a {
 	font-family: var(--secondaryFont);
-	font-weight: 400;
+	font-weight: 500;
 	padding-bottom: 0px !important;
+	color: black !important;
+}
+
+ul > li > a:hover {
+	text-decoration: underline;
 }

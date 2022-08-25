@@ -19,21 +19,24 @@ export class NewsCards extends Component {
 						className='card-img-top'
 					/>
 					<div className='card-body cardBody'>
-						<h5 className='card-title cardText'> {title}</h5>
+						<h5 className='card-title cardText' id='cardTitle'>
+							{' '}
+							{title}
+						</h5>
 						<p className='card-text cardText'>{description}...</p>
-						<p className='card-text'>
-							<small className='text-muted'>
+						<p className='card-text mb-3'>
+							<small className='text-muted '>
 								Updated {moment(publishedAt).startOf('minutes').fromNow()} by{' '}
 								<strong>{PublisherName ? PublisherName : 'Unknown'}</strong>
 							</small>
 						</p>
 						<a
 							href={newsUrl}
-							className='btn btn-sm btn-primary'
+							className=' readBtn'
 							target='_blank'
 							rel='noopener noreferrer'
 						>
-							Read more
+							Read more &rarr;
 						</a>
 					</div>
 				</div>
