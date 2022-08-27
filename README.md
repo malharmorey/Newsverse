@@ -24,7 +24,7 @@ Here are some snapshots 📸 of how my app looks ✨
 <br>
 <img src="Images/desktop_view.png" alt="Desktop View"/>
 <br>
-<img src="Images/mobile_view.png" alt="Mobile View"/>
+<img src="Images/MoblileView.png" alt="Mobile View"/>
 <br>
 
 ### Built With
