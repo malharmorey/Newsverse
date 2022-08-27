@@ -7,7 +7,15 @@ const NewsCards = (props) => {
 		props;
 	return (
 		<div className='my-4'>
-			<div className='card m-auto' id='divCard'>
+			<div
+				className='card m-auto'
+				id='divCard'
+				style={
+					props.mode === 'light'
+						? {}
+						: { backgroundColor: 'black', color: 'wheat', boxShadow: 'none' }
+				}
+			>
 				<img
 					src={
 						!imgUrl
@@ -34,6 +42,7 @@ const NewsCards = (props) => {
 						className=' readBtn'
 						target='_blank'
 						rel='noopener noreferrer'
+						style={props.mode === 'light' ? {} : { color: 'wheat' }}
 					>
 						Read more &rarr;
 					</a>

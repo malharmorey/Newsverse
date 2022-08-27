@@ -45,11 +45,19 @@ const News = (props) => {
 	};
 
 	return (
-		<>
-			<p id='headline' className='text-center display-5 '>
+		<div
+			id='mainContainer'
+			style={props.mode === 'light' ? {} : { backgroundColor: '#15171a' }}
+		>
+			<p
+				id='headline'
+				className='text-center display-5 '
+				style={
+					props.mode === 'light' ? {} : { color: 'wheat', textShadow: 'none' }
+				}
+			>
 				Top {capitalizeFirstLetter(props.category)} Headlines
 			</p>
-
 			<InfiniteScroll
 				dataLength={articles.length}
 				next={fetchMoreData}
@@ -74,6 +82,7 @@ const News = (props) => {
 										newsUrl={elements.url}
 										PublisherName={elements.source.name}
 										publishedAt={elements.publishedAt}
+										mode={props.mode}
 									/>
 								</div>
 							);
@@ -83,9 +92,35 @@ const News = (props) => {
 			</InfiniteScroll>
 			<ScrollToTop
 				smooth
-				component={<button className='scrollTopBtn'>&uarr;</button>}
+				component={
+					<button
+						className='scrollTopBtn'
+						style={
+							props.mode === 'light'
+								? {}
+								: {
+										backgroundColor: 'wheat',
+										color: 'black',
+										boxShadow: 'none',
+										WebkitBoxShadow: 'none',
+										MozWindowShadow: 'none',
+								  }
+						}
+					>
+						&uarr;
+					</button>
+				}
+				style={
+					props.mode === 'light'
+						? {}
+						: {
+								boxShadow: 'none',
+								WebkitBoxShadow: 'none',
+								MozWindowShadow: 'none',
+						  }
+				}
 			/>
-		</>
+		</div>
 	);
 };
 

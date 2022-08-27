@@ -7,8 +7,20 @@ import LoadingBar from 'react-top-loading-bar';
 
 function App() {
 	const [progress, setProgress] = useState(10);
+	const [mode, setMode] = useState('light');
 	const pageSize = 10;
 	const apiKey = process.env.REACT_APP_NEWS_API;
+
+	//Dark-Mode Toggle
+	const toggleMode = () => {
+		if (mode === 'light') {
+			setMode('dark');
+			document.body.style.backgroundColor = '#15171a';
+		} else {
+			setMode('light');
+			document.body.style.backgroundColor = 'white';
+		}
+	};
 
 	return (
 		<Router>
@@ -17,7 +29,7 @@ function App() {
 				progress={progress}
 				onLoaderFinished={() => setProgress(0)}
 			/>
-			<Navbar />
+			<Navbar mode={mode} toggleMode={toggleMode} />
 
 			<Routes>
 				<Route
@@ -31,6 +43,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='general'
+							mode={mode}
 						/>
 					}
 				/>
@@ -45,6 +58,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='business'
+							mode={mode}
 						/>
 					}
 				/>
@@ -59,6 +73,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='entertainment'
+							mode={mode}
 						/>
 					}
 				/>
@@ -73,6 +88,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='health'
+							mode={mode}
 						/>
 					}
 				/>
@@ -87,6 +103,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='science'
+							mode={mode}
 						/>
 					}
 				/>
@@ -101,6 +118,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='sports'
+							mode={mode}
 						/>
 					}
 				/>
@@ -115,6 +133,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='technology'
+							mode={mode}
 						/>
 					}
 				/>
@@ -129,6 +148,7 @@ function App() {
 							country='in'
 							apiKey={apiKey}
 							category='about'
+							mode={mode}
 						/>
 					}
 				/>

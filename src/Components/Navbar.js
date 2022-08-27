@@ -2,12 +2,20 @@ import React from 'react';
 import '../StyleSheets/navbar.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
 	return (
-		<div id='navBar'>
-			<nav className='navbar navbar-expand-lg  '>
-				<div className='container-fluid ' id='fluidContainer'>
-					<Link className='navbar-brand ' id='title' to='/'>
+		<div
+			id='navBar'
+			style={props.mode === 'light' ? {} : { backgroundColor: 'black' }}
+		>
+			<nav className='navbar navbar-expand-lg py-0 '>
+				<div className='container-fluid mt-1' id='fluidContainer'>
+					<Link
+						className='navbar-brand '
+						id='title'
+						to='/'
+						style={props.mode === 'light' ? {} : { color: 'wheat' }}
+					>
 						Newsverse
 					</Link>
 					<button
@@ -22,51 +30,95 @@ const Navbar = () => {
 						<span className='navbar-toggler-icon  '></span>
 					</button>
 					<div
-						className='collapse navbar-collapse '
+						className='collapse navbar-collapse pe-5'
 						id='navbarSupportedContent'
 					>
-						<ul className='navbar-nav me-auto mb-2 mb-lg-0 '>
+						<ul className='navbar-nav me-auto mb-lg-0 '>
 							<li className='nav-item'>
-								<Link className='nav-link  ' to='/'>
+								<Link
+									className='nav-link  active '
+									to='/'
+									style={props.mode === 'light' ? {} : { color: `wheat` }}
+								>
 									Home
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='nav-link ' to='/business'>
+								<Link
+									className='nav-link  active'
+									to='/business'
+									style={props.mode === 'light' ? {} : { color: 'wheat' }}
+								>
 									Business
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='nav-link ' to='/entertainment'>
+								<Link
+									className='nav-link  active'
+									to='/entertainment'
+									style={props.mode === 'light' ? {} : { color: 'wheat' }}
+								>
 									Entertainment
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='nav-link ' to='/health'>
+								<Link
+									className='nav-link  active'
+									to='/health'
+									style={props.mode === 'light' ? {} : { color: 'wheat' }}
+								>
 									Health
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='nav-link ' to='/science'>
+								<Link
+									className='nav-link  active'
+									to='/science'
+									style={props.mode === 'light' ? {} : { color: 'wheat' }}
+								>
 									Science
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='nav-link ' to='/sports'>
+								<Link
+									className='nav-link  active'
+									to='/sports'
+									style={props.mode === 'light' ? {} : { color: 'wheat' }}
+								>
 									Sports
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='nav-link ' to='/technology'>
+								<Link
+									className='nav-link  active'
+									to='/technology'
+									style={props.mode === 'light' ? {} : { color: 'wheat' }}
+								>
 									Technology
 								</Link>
 							</li>
 							<li className='nav-item'>
-								<Link className='nav-link ' to='/about'>
+								<Link
+									className='nav-link  active'
+									to='/about'
+									style={props.mode === 'light' ? {} : { color: 'wheat' }}
+								>
 									About
 								</Link>
 							</li>
 						</ul>
+						<div className='darkMode'>
+							<div className='switch'>
+								<label className='theme-switch' htmlFor='checkbox'>
+									<input
+										type='checkbox'
+										id='checkbox'
+										onClick={props.toggleMode}
+									/>
+									<div className='slider round'></div>
+								</label>
+							</div>
+						</div>
 					</div>
 				</div>
 			</nav>
