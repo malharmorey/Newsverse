@@ -8,7 +8,16 @@ const Navbar = (props) => {
 			id='navBar'
 			style={props.mode === 'light' ? {} : { backgroundColor: 'black' }}
 		>
-			<nav className='navbar navbar-expand-lg py-0 '>
+			<nav
+				className={`navbar navbar-expand-lg py-0 navbar-${
+					props.mode === 'light' ? 'light' : 'dark'
+				}`}
+				style={
+					props.mode === 'light'
+						? { backgroundColor: 'white' }
+						: { backgroundColor: 'black' }
+				}
+			>
 				<div className='container-fluid mt-1' id='fluidContainer'>
 					<Link
 						className='navbar-brand '

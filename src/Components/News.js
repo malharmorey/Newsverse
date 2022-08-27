@@ -51,7 +51,7 @@ const News = (props) => {
 		>
 			<p
 				id='headline'
-				className='text-center display-5 '
+				className='text-center'
 				style={
 					props.mode === 'light' ? {} : { color: 'wheat', textShadow: 'none' }
 				}
