@@ -21,13 +21,15 @@
 ## Images
 
 Here are some snapshots 📸 of how my app looks ✨
-<img src="Images/desktop_view.png" alt=""/>
 <br>
-<img src="Images/mobile_view.png" alt=""/>
+<img src="Images/desktop_view.png" alt="Desktop View"/>
+<br>
+<img src="Images/mobile_view.png" alt="Mobile View"/>
 <br>
 
 ### Built With
 
 - [React](https://reactjs.org/)
 - [React Router](https://reactrouter.com/en/main)
+- [Bootstrap](https://getbootstrap.com/)
 - [News API](https://newsapi.org/)
