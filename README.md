@@ -22,9 +22,11 @@
 
 Here are some snapshots 📸 of how my app looks ✨
 <br>
-<img src="Images/desktop_view.png" alt="Desktop View"/>
+<img src="Images/desktop_view_light.png" alt="Desktop View light"/>
 <br>
-<img src="Images/MoblileView.png" alt="Mobile View"/>
+<img src="Images/desktop_view_dark.png" alt="Desktop View dark"/>
+<br>
+<img src="Images/mobile_view.jpg" alt="Mobile View"/>
 <br>
 
 ### Built With
