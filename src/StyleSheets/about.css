@@ -1,0 +1,12 @@
+@import url(../App.css);
+
+.aboutText {
+	font-family: var(--secondaryFont);
+	font-size: 1.1rem;
+}
+
+@media (max-width: 500px) {
+	.aboutText {
+		font-size: 1rem;
+	}
+}

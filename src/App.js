@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import News from './Components/News';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
+import About from './Components/About';
 
 function App() {
 	const [progress, setProgress] = useState(10);
@@ -140,17 +141,7 @@ function App() {
 				<Route
 					exact
 					path='/about'
-					element={
-						<News
-							setProgress={setProgress}
-							key='about'
-							pageSize={pageSize}
-							country='in'
-							apiKey={apiKey}
-							category='about'
-							mode={mode}
-						/>
-					}
+					element={<About mode={mode} setProgress={setProgress} />}
 				/>
 			</Routes>
 		</Router>
