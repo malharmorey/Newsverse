@@ -1,4 +1,4 @@
-import './App.css';
+import './StyleSheets/App.css';
 import React, { useState } from 'react';
 import Navbar from './Components/Navbar';
 import News from './Components/News';
@@ -9,7 +9,7 @@ import About from './Components/About';
 function App() {
 	const [progress, setProgress] = useState(10);
 	const [mode, setMode] = useState('light');
-	const pageSize = 10;
+	const pageSize = 20;
 	const apiKey = process.env.REACT_APP_NEWS_API;
 
 	//Dark-Mode Toggle

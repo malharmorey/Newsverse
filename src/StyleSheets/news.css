@@ -1,4 +1,4 @@
-@import url(../App.css);
+@import url(../StyleSheets/App.css);
 
 #headline {
 	font-family: var(--primaryFont);

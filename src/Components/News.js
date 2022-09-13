@@ -32,7 +32,10 @@ const News = (props) => {
 
 	useEffect(() => {
 		document.title = `Newsverse - ${capitalizeFirstLetter(props.category)}`;
-		fetchNews();
+		fetchNews().catch(
+			(err) => console.log('error', err),
+			props.setProgress(100)
+		);
 	}, []); // eslint-disable-line
 
 	const fetchMoreData = async () => {
